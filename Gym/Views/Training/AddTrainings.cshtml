@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Add / Trainings";
+}
+
+@model Gym.DTO.AddTrainingDTO 
+
+<div class="text-center">
+    <h1 class="display-4">Add Training</h1>
+</div>
+
+<form asp-controller="Training" asp-action="AddTrainingsForm">
+
+    <div class="form-group">
+        <label class="mt-4">Name</label>
+        <input class="form-control" type="text" placeholder="Enter Name" asp-for="Name"></input>
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label class="mt-4">Description</label>
+        <input class="form-control" type="text" placeholder="Enter Description" asp-for="Description"></input>
+        <span class="text-danger" asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label class="mt-4">Start Date</label>
+        <input class="form-control" type="text" placeholder="Enter Start Date(DD-MM-RRRR)" asp-for="StartDate"></input>
+        <span class="text-danger" asp-validation-for="StartDate"></span>
+
+    </div>
+
+    <div class="form-group">
+        <label class="mt-4">Duration</label>
+        <input class="form-control" type="number" placeholder="Duration(in minutes)" asp-for="Duration"></input>
+        <span class="text-danger" asp-validation-for="Duration"></span>
+
+    </div>
+    
+    <div class="form-group">
+        <label class="mt-4">Trainer ID</label>
+        <input class="form-control" type="number" placeholder="Enter Trainer ID" asp-for="TrainerId"></input>
+        <span class="text-danger" asp-validation-for="TrainerId"></span>
+    </div>
+    
+    <button class="btn btn-primary" type="submit" style="margin-top: 10px;">Ok</button>
+
+
+</form>

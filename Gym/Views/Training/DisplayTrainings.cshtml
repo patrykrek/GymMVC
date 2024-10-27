@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Display / Trainings";
+}
+
+@model List<Gym.DTO.GetTrainingDTO>
+
+<div class="text-center">
+    <h1 class="display-4">All Trainings</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name 
+                </th>
+                <th>
+                    Description 
+                </th>
+                <th>
+                    Start Date 
+                </th>
+                <th>
+                    Duration 
+                </th>
+                <th>
+                    Trainer ID   
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var training in Model)
+            {
+                <tr>
+                    <td>
+                        @training.Id
+                    </td>
+                    <td>
+                        @training.Name
+                    </td>
+                    <td>
+                        @training.Description
+                    </td>
+                    <td>
+                        @training.StartDate
+                    </td>
+                    <td>
+                        @training.Duration
+                    </td>
+                    <td>
+                        @training.TrainerId
+                    </td>
+                    <td>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a class="btn btn-primary btn-sm" asp-action="EditTrainings" asp-route-id="@training.Id">Edit</a>
+                            <a class="btn btn-danger btn-sm" asp-action="DeleteTrainings" asp-route-id="@training.Id">Delete</a>
+                        }
+                       
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+

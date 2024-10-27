@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Reservations";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Reservations</h1>
+    @if(User.IsInRole("User"))
+    {
+        <a asp-controller="Reservation" asp-action="CreateReservation" class="btn btn-primary">Create</a>
+        <a asp-controller="Reservation" asp-action="GetUserReservations" class="btn btn-reserv">My Reservations</a>
+    }
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-controller="Reservation" asp-action="GetEveryUserReservations" class="btn btn-custom">Get Users Reservations</a>
+    }
+    
+   
+    
+</div>

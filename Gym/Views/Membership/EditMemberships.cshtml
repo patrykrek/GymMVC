@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Edit / Memberships";
+}
+
+@model Gym.DTO.UpdateMembershipDTO
+
+<div class="text-center">
+    <h1 class="display-4">Edit Membership</h1>
+</div>
+
+<form asp-controller="Membership" asp-action="EditMembershipsForm">
+
+    <div class="form-group">
+        <input type="hidden" asp-for="Id"></input>
+    </div>
+
+    <div class="form-group">
+        <label class="mt-4">Name</label>
+        <input class="form-control" type="text" placeholder="Edit Name" asp-for="Name"></input>
+    </div>
+
+    <div class="form-group">
+        <label class="mt-4">Price per month</label>
+        <input class="form-control" type="number" placeholder="0.00" asp-for="PricePerMonth" step="0.01"></input>
+        <span class="text-danger" asp-validation-for="PricePerMonth"></span>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Ok</button>
+</form>

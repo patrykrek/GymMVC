@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Trainers";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Trainers</h1>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-controller="Trainer" asp-action="AddTrainers" class="btn btn-secondary">Add new trainer</a>
+    }
+    <a asp-controller="Trainer" asp-action="DisplayTrainers" class="btn btn-primary">Overview</a>
+    
+
+</div>

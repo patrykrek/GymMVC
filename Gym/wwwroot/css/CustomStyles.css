@@ -1,0 +1,27 @@
+﻿
+.btn-custom{
+    background-color: #ff6a00;
+    color: white;
+    border-color: #ff6a00;
+    border-radius: 100px;
+    
+    
+}
+
+.btn-custom:hover{
+    background-color: #ffd800
+}
+
+.btn-reserv{
+    background-color: #b6ff00;
+    color: black;
+    border-color: #b6ff00;
+    border-radius: 30px;
+
+}
+
+.btn-reserv:hover{
+    background-color: #ffd800;
+}
+
+

@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Edit / Trainings";
+}
+
+@model Gym.DTO.UpdateTrainingDTO
+
+<div class="text-center">
+    <h1 class="display-4">Edit Training</h1>
+</div>
+
+<form asp-controller="Training" asp-action="EditTrainingsForm">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id"></input>
+    </div>
+    <div class="form-group">
+        <label class="mt-4">Name</label>
+        <input class="form-control" type="text" placeholder="Edit Name" asp-for="Name"></input>
+    </div>
+
+    <div class="form-group">
+        <label class="mt-4">Description</label>
+        <input class="form-control" type="text" placeholder="Edit Description" asp-for="Description"></input>
+    </div>
+
+    <div class="form-group">
+        <label class="mt-4">Start Date</label>
+        <input class="form-control" type="date" placeholder="Edit Start Date" asp-for="StartDate"></input>
+    </div>
+
+    <div class="form-group">
+        <label class="mt-4">Duration</label>
+        <input class="form-control" type="number" placeholder="Edit Duration" asp-for="Duration"></input>
+    </div>
+
+    <div class="form-group">
+        <label class="mt-4">Trainer ID</label>      
+        <input class="form-control" type="number" placeholder="Edit Trainer ID" asp-for="TrainerId"></input>      
+        <span class="text-danger" asp-validation-for="TrainerId"></span>
+    </div>
+
+    <button class="btn btn-primary" type="submit" style="margin-top: 10px;">Ok</button>
+</form>

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Memberships";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Membership</h1>
+
+    @if (User.IsInRole("User"))
+    {
+        <a asp-controller="Membership" asp-action="DisplayMemberships" class="btn btn-primary">Overview</a>
+        <a asp-controller="Membership" asp-action="DisplayUserMemberships" class="btn btn-reserv">My Membership</a>
+    }
+    
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-controller="Membership" asp-action="DisplayMemberships" class="btn btn-primary">Overview</a>
+        <a asp-controller="Membership" asp-action="AddMemberships" class="btn btn-secondary">Add Membership</a>
+        <a asp-controller="Membership" asp-action="DisplayEveryUserMemberships" class="btn btn-custom">Get Users Memberships</a>
+    }
+   
+
+</div>

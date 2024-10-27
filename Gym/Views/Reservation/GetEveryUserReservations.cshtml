@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Users / Reservations";
+}
+
+@model List<Gym.DTO.GetReservationDTO>
+<div class="text-center">
+    <h1 class="display-4">Users Reservations</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID 
+                </th>
+                <th>
+                    Reservation Date 
+                </th>
+                <th>
+                    User ID
+                </th>
+                <th>
+                    Training ID
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reser in Model)
+            {
+                <tr>
+                    <td>
+                        @reser.Id
+                    </td>
+                    <td>
+                        @reser.ReservationDate
+                    </td>
+                    <td>
+                        @reser.UserId
+                    </td>
+                    <td>
+                        @reser.TrainingId
+                    </td>
+                </tr>
+            }       
+        </tbody>
+    </table>
+</div>

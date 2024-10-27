@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "My / Memberships";
+}
+
+@model List<Gym.DTO.GetUserMembershipDTO>
+
+<div class="text-center">
+    <h1>My Membership</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    User ID  
+                </th>
+                <th>
+                    Membership ID 
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var membership in Model)
+            {
+                <tr>
+                    <td>
+                        @membership.Id
+                    </td>
+                    <td>
+                        @membership.userId
+                    </td>
+                    <td>
+                        @membership.MembershipId
+                    </td>
+                </tr>
+            }
+           
+        </tbody>
+    </table>
+</div>
+

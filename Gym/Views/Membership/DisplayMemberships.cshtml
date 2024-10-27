@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Display / Memberships";
+}
+
+@model List<Gym.DTO.GetMembershipDTO>
+
+
+<div class="text-center">
+    <h1 class="display-4">All Memberships</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name 
+                </th>
+                <th>
+                    PricePerMonth
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var membership in Model)
+            {
+                <tr>
+                    <td>
+                        @membership.Id
+                    </td>
+                    <td>
+                        @membership.Name
+                    </td>
+                    <td>
+                        @membership.PricePerMonth
+                    </td>
+                    <td>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a class="btn btn-primary btn-sm" asp-action="EditMemberships" asp-route-id="@membership.Id">Edit</a>
+                            <a class="btn btn-danger btn-sm" asp-action="DeleteMemberships" asp-route-id="@membership.Id">Delete</a>
+                        }
+                        @if (User.IsInRole("User"))
+                        {
+                            <form asp-controller="Membership" asp-action="BuyMembershipForm" method="post">
+                                <input type="hidden" name="membershipId" value="@membership.Id" />
+                                <button class="btn-sm btn-custom" type="submit">Buy</button>
+                            </form>
+                        }
+                       
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>

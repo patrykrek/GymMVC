@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Edit / Trainers";
+}
+
+@model Gym.DTO.UpdateTrainerDTO
+
+<div class="text-center">
+    <h1 class="display-4">Edit Trainer</h1>
+
+</div>
+
+<form asp-controller="Trainer" asp-action="EditTrainersForm">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id"></input>
+    </div>
+
+    <div class="form-group">
+        <label class="mt-4">First Name</label>
+        <input class="form-control" type="text" placeholder="Edit First Name" asp-for="FirstName"></input>
+
+    </div>
+    <div class="form-group">
+        <label class="mt-4">Last Name</label>
+        <input class="form-control" type="text" placeholder="Edit Last Name" asp-for="LastName"></input>
+    </div>
+    <div class="form-group">
+        <label class="mt-4">BIO</label>
+        <input class="form-control" type="text" placeholder="Edit BIO" asp-for="Bio"></input>
+    </div>
+
+    <button class="btn btn-primary" type="submit" style="margin-top: 10px;">Ok</button>
+    
+</form>

@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@{
+    ViewData["Title"] = "Roles";
+}
+
+@inject SignInManager<IdentityUser> signInUser
+@inject UserManager<IdentityUser> userManager
+
+@model UserRole
+
+<div class="text-center">
+    <h1 class="display-4">Roles</h1>
+    <a asp-controller="Role" asp-action="DisplayRoles" class="btn btn-primary">Display Roles</a>
+
+</div>
+
